@@ -74,7 +74,7 @@ const Success = () => {
   }, [sessionId]);
 
   return (
-    <div className="min-h-[70vh] flex items-center justify-center p-4 bg-gradient-to-br from-green-50 to-blue-50">
+    <div className="min-h-[70vh] flex items-center justify-center p-4 bg-gradient-to-r from-green-50 to-orange-50">
       <div
         className={`w-full max-w-2xl bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-500 ${
           showContent ? "scale-100 opacity-100" : "scale-95 opacity-0"

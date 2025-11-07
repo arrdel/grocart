@@ -61,7 +61,7 @@ const SearchPage = () => {
   };
 
   return (
-    <section className="bg-white">
+    <section className="bg-gradient-to-r from-green-50 to-orange-50 min-h-screen">
       <div className="container mx-auto p-4">
         <p className="font-semibold">Search Results: {data.length} </p>
 

@@ -135,7 +135,7 @@ const MyOrders = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-gray-50">
+    <div className="relative min-h-screen bg-gradient-to-r from-green-50 to-orange-50">
       <div
         className={`p-4 transition-all duration-300 ${
           selectedOrder ? "mr-96" : ""

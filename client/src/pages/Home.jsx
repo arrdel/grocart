@@ -112,6 +112,8 @@
 
 import React, { useState, useEffect } from "react";
 import banner from "../assets/banner.jpg";
+import banner1 from "../assets/banner1.png";
+import grocart_logo from "../assets/grocart_logo.png";
 import bannerMobile from "../assets/banner-mobile.jpg";
 import { useSelector } from "react-redux";
 import { valideURLConvert } from "../utils/valideURLConvert";
@@ -157,7 +159,7 @@ const Home = () => {
   };
 
   return (
-    <section className="bg-gradient-to-b from-blue-50 via-white to-green-50">
+    <section className="bg-gradient-to-r from-green-50 to-orange-50">
       {/* Hero Banner Section */}
       <div className="container mx-auto px-4 py-6">
         <div
@@ -168,18 +170,18 @@ const Home = () => {
         >
           {bannerLoaded && (
             <>
-              {/* <img
-                src={banner}
+              <img
+                src={banner1}
                 className="w-full h-full object-cover hidden lg:block"
                 alt="banner"
-              /> */}
+              />
               <img
                 src={bannerMobile}
                 className="w-full h-full object-cover lg:hidden"
                 alt="banner"
               />
-              {/* Overlay with gradient */} // Edit this for banner
-              <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent hidden lg:flex items-center">
+              {/* Overlay with gradient */}
+              {/* <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent hidden lg:flex items-center">
                 <div className="container mx-auto px-12">
                   <div className="max-w-xl text-white animate-fade-in-up">
                     <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
@@ -195,7 +197,7 @@ const Home = () => {
                     </button>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </>
           )}
         </div>
@@ -328,10 +330,10 @@ const Home = () => {
       </div>
 
       {/* Why Choose Us Section */}
-      <div className="bg-gradient-to-r from-green-600 to-blue-600 py-16">
+      <div className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
               Why Choose GroCart?
             </h2>
             <p className="text-green-50 text-lg">
@@ -343,10 +345,10 @@ const Home = () => {
               <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <FaClock className="text-green-600 text-3xl" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">
+              <h3 className="text-2xl font-bold text-black  mb-3">
                 Quick Delivery
               </h3>
-              <p className="text-green-50 leading-relaxed">
+              <p className="text-black leading-relaxed">
                 Get your groceries delivered within hours. Same-day delivery
                 available for orders placed before 2 PM.
               </p>
@@ -355,10 +357,10 @@ const Home = () => {
               <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <FaLeaf className="text-green-600 text-3xl" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">
+              <h3 className="text-2xl font-bold text-black mb-3">
                 Fresh Products
               </h3>
-              <p className="text-green-50 leading-relaxed">
+              <p className="text-black leading-relaxed">
                 Handpicked fresh items sourced directly from local farms.
                 Quality assurance on every product.
               </p>
@@ -367,10 +369,10 @@ const Home = () => {
               <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <FaTag className="text-green-600 text-3xl" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">
+              <h3 className="text-2xl font-bold text-black  mb-3">
                 Best Prices
               </h3>
-              <p className="text-green-50 leading-relaxed">
+              <p className="text-black leading-relaxed">
                 Competitive prices on all your favorites. Special deals and
                 discounts updated daily.
               </p>
@@ -380,7 +382,7 @@ const Home = () => {
       </div>
 
       {/* Category Products */}
-      <div className="py-16 bg-white">
+      <div className="py-16">
         {categoryData?.map((c) => {
           return (
             <div

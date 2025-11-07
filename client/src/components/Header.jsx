@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
+import grocart_logo from "../assets/grocart_logo.png";
 import Search from "./Search";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaRegCircleUser } from "react-icons/fa6";
@@ -57,21 +58,21 @@ const Header = () => {
   // },[cartItem])
 
   return (
-    <header className="h-24 lg:h-20 lg:shadow-md sticky top-0 z-40 flex flex-col justify-center gap-1 bg-white">
+    <header className="h-24 lg:h-20 lg:shadow-md sticky top-0 z-40 flex flex-col justify-center gap-1 bg-gradient-to-r from-green-50 to-orange-50">
       {!(isSearchPage && isMobile) && (
         <div className="container mx-auto flex items-center px-2 justify-between">
           {/**logo */}
           <div className="h-full">
             <Link to={"/"} className="h-full flex justify-center items-center">
               <img
-                src={logo}
+                src={grocart_logo}
                 width={170}
                 height={60}
                 alt="logo"
                 className="hidden lg:block"
               />
               <img
-                src={logo}
+                src={grocart_logo}
                 width={120}
                 height={60}
                 alt="logo"

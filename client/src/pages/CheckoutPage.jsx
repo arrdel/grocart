@@ -326,7 +326,7 @@ const CheckoutPage = () => {
     }
   };
   return (
-    <section className="bg-blue-50">
+    <section className="bg-gradient-to-r from-green-50 to-orange-50 min-h-screen">
       <div className="container mx-auto p-4 flex flex-col lg:flex-row w-full gap-5 justify-between">
         <div className="w-full">
           {/***address***/}
