@@ -19,10 +19,29 @@ dotenv.config();
 
 const app = express();
 
+// CORS Configuration for production and development
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  "http://localhost:5173",
+  "http://localhost:3000",
+];
+
 app.use(
   cors({
     credentials: true,
-    origin: process.env.FRONTEND_URL,
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl requests)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.indexOf(origin) === -1) {
+        const msg =
+          "The CORS policy for this site does not allow access from the specified Origin.";
+        return callback(new Error(msg), false);
+      }
+      return callback(null, true);
+    },
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
@@ -61,11 +80,15 @@ connectDB().then(() => {
     console.log(`Server is running on port ${PORT}`);
     console.log("=== Environment Check ===");
     console.log("Frontend URL:", process.env.FRONTEND_URL);
+    console.log("MongoDB Connected:", !!process.env.MONGODB_URI);
     console.log(
       "Stripe Secret Key configured:",
       !!process.env.STRIPE_SECRET_KEY
     );
-    console.log("Stripe Public Key should be set in frontend .env");
+    console.log("Cloudinary configured:", !!process.env.CLOUDINARY_CLOUD_NAME);
     console.log("========================");
   });
 });
+
+// Export the Express app for Vercel serverless functions
+export default app;
